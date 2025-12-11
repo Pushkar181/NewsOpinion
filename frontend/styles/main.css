@@ -1,0 +1,205 @@
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700&family=Roboto:wght@400;500&display=swap');
+
+body {
+    margin: 0;
+    padding: 0;
+    font-family: 'Roboto', Arial, sans-serif;
+    background: #f4f4f4;
+    color: #222;
+}
+
+.hero {
+    position: relative;
+    height: 100vh;
+    background: url('https://images.unsplash.com/photo-1506744038136-46273834b3fb?auto=format&fit=crop&w=1500&q=80') center/cover no-repeat;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.overlay {
+    position: absolute;
+    top: 0; left: 0; right: 0; bottom: 0;
+    background: rgba(20, 30, 48, 0.7);
+    z-index: 1;
+}
+
+.hero-content {
+    position: relative;
+    z-index: 2;
+    text-align: center;
+    color: #fff;
+    max-width: 600px;
+    margin: 0 auto;
+}
+
+.site-title {
+    font-family: 'Playfair Display', serif;
+    font-size: 3rem;
+    margin-bottom: 0.5rem;
+    color: #ffd700;
+    letter-spacing: 2px;
+}
+
+.tagline {
+    font-size: 1.5rem;
+    margin-bottom: 1.5rem;
+    color: #fff;
+    font-weight: 500;
+}
+
+.description {
+    font-size: 1.1rem;
+    margin-bottom: 2.5rem;
+    color: #e0e0e0;
+}
+
+.auth-buttons {
+    display: flex;
+    justify-content: center;
+    gap: 1.5rem;
+}
+
+.btn {
+    padding: 0.75rem 2.5rem;
+    border: none;
+    border-radius: 30px;
+    font-size: 1.1rem;
+    font-family: 'Roboto', Arial, sans-serif;
+    cursor: pointer;
+    text-decoration: none;
+    transition: background 0.2s, color 0.2s, box-shadow 0.2s;
+    box-shadow: 0 4px 16px rgba(0,0,0,0.12);
+}
+
+.btn-login {
+    background: #14203c;
+    color: #ffd700;
+    border: 2px solid #ffd700;
+}
+
+.btn-login:hover {
+    background: #ffd700;
+    color: #14203c;
+}
+
+.btn-signup {
+    background: #ffd700;
+    color: #14203c;
+    border: 2px solid #ffd700;
+}
+
+.btn-signup:hover {
+    background: #fff;
+    color: #14203c;
+    border: 2px solid #ffd700;
+}
+
+.modal-overlay {
+    position: fixed;
+    top: 0; left: 0; right: 0; bottom: 0;
+    background: rgba(20, 30, 48, 0.6);
+    backdrop-filter: blur(4px);
+    display: none;
+    align-items: center;
+    justify-content: center;
+    z-index: 100;
+    transition: opacity 0.3s;
+}
+
+.modal-overlay.active {
+    display: flex;
+}
+
+.modal {
+    background: rgba(255,255,255,0.95);
+    border-radius: 18px;
+    box-shadow: 0 8px 32px rgba(20,30,48,0.25);
+    padding: 2.5rem 2rem 2rem 2rem;
+    min-width: 320px;
+    max-width: 95vw;
+    position: relative;
+    text-align: center;
+    animation: fadeIn 0.3s;
+}
+
+@keyframes fadeIn {
+    from { opacity: 0; transform: translateY(-30px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+.close-modal {
+    position: absolute;
+    top: 1rem;
+    right: 1rem;
+    background: none;
+    border: none;
+    font-size: 2rem;
+    color: #14203c;
+    cursor: pointer;
+    transition: color 0.2s;
+}
+.close-modal:hover {
+    color: #ffd700;
+}
+
+.modal-form h2 {
+    font-family: 'Playfair Display', serif;
+    color: #14203c;
+    margin-bottom: 1.2rem;
+}
+
+.modal-form form {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+}
+
+.modal-form input {
+    padding: 0.7rem 1rem;
+    border: 1.5px solid #ddd;
+    border-radius: 8px;
+    font-size: 1rem;
+    font-family: 'Roboto', Arial, sans-serif;
+    outline: none;
+    transition: border 0.2s;
+}
+.modal-form input:focus {
+    border: 1.5px solid #ffd700;
+}
+
+.switch-form {
+    margin-top: 1.2rem;
+    font-size: 0.98rem;
+    color: #444;
+}
+.switch-form a {
+    color: #14203c;
+    font-weight: 500;
+    text-decoration: underline;
+    cursor: pointer;
+    transition: color 0.2s;
+}
+.switch-form a:hover {
+    color: #ffd700;
+}
+
+@media (max-width: 600px) {
+    .site-title {
+        font-size: 2rem;
+    }
+    .tagline {
+        font-size: 1.1rem;
+    }
+    .description {
+        font-size: 1rem;
+    }
+    .auth-buttons {
+        flex-direction: column;
+        gap: 1rem;
+    }
+    .modal {
+        min-width: 90vw;
+        padding: 1.2rem 0.5rem 1.5rem 0.5rem;
+    }
+} 

@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>NewsOpinion - Home</title>
+    <link rel="stylesheet" href="styles/home.css">
+</head>
+<body>
+    <div class="dynamic-bg" id="dynamicBg"></div>
+    <header class="top-bar">
+        <button id="backBtn" class="back-btn" title="Back">&larr;</button>
+        <div class="logo">NewsOpinion</div>
+        <form class="search-bar" id="searchForm">
+            <input type="text" id="searchInput" placeholder="Search news...">
+            <button type="submit">🔍</button>
+        </form>
+        <div class="user-icon">👤</div>
+    </header>
+    <main class="main-content" id="mainContent">
+        <div class="feed-container" id="feedContainer">
+            <div id="resultsHeading"></div>
+            <section class="recommendations" id="recommendations">
+                <!-- Article cards will be injected here -->
+            </section>
+            <div id="loadMoreContainer"></div>
+        </div>
+        <aside class="summary-panel" id="summaryPanel" style="display:none;">
+            <h3>Summary</h3>
+            <div class="summary-content" id="summaryContent">Select articles or search to see a summary here.</div>
+        </aside>
+    </main>
+    <script src="scripts/home.js"></script>
+    <style>
+        .summary-panel b {
+            color: #d97706;
+            font-weight: bold;
+        }
+    </style>
+</body>
+</html> 
